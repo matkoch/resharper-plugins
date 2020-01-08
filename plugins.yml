@@ -23,6 +23,7 @@
 - name: InternalsVisibleTo
   repository: https://github.com/matkoch/ReSharper.InternalsVisibleTo/
   resharper: ReSharper.InternalsVisibleTo
+  rider: 13624-internalsvisibleto
 - name: PresentationAssistant
   repository: https://github.com/JetBrains/resharper-presentation-assistant/
   resharper: JetBrains.PresentationAssistant
