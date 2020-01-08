@@ -21,7 +21,7 @@
   resharper: ReSharperPlugin.HeapView
   rider: 9223-heap-allocations-viewer
 - name: InternalsVisibleTo
-  repository: https://github.com/hmemcpy/ReSharper.InternalsVisibleTo/
+  repository: https://github.com/matkoch/ReSharper.InternalsVisibleTo/
   resharper: ReSharper.InternalsVisibleTo
 - name: PresentationAssistant
   repository: https://github.com/JetBrains/resharper-presentation-assistant/
