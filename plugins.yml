@@ -21,7 +21,7 @@
   resharper: ReSharperPlugin.HeapView
   rider: 9223-heap-allocations-viewer
 - name: InternalsVisibleTo
-  repository: https://github.com/matkoch/ReSharper.InternalsVisibleTo/
+  repository: https://github.com/matkoch/resharper-internalsvisibleto/
   resharper: ReSharper.InternalsVisibleTo
   rider: 13624-internalsvisibleto
 - name: PresentationAssistant
@@ -34,11 +34,11 @@
   repository: https://github.com/StyleCop/StyleCop.ReSharper/
   resharper: StyleCop.StyleCop
 - name: TestLinker
-  repository: https://github.com/matkoch/TestLinker/
+  repository: https://github.com/matkoch/resharper-testlinker/
   resharper: ReSharper.TestLinker
   rider: 12022-testlinker
 - name: Xao
-  repository: https://github.com/hmemcpy/ReSharper.Xao/
+  repository: https://github.com/matkoch/resharper-xao/
   resharper: ReSharper.Xao
   rider: 12816-xao
 - name: _Template
