@@ -16,8 +16,8 @@
 - name: Exceptional
   repository: https://github.com/CSharpAnalyzers/ExceptionalReSharper/
   resharper: ExceptionalDevs.Exceptional
-- name: HeapAllocationViewer
-  repository: https://github.com/citizenmatt/resharper-heapview/
+- name: HeapView
+  repository: https://github.com/controlflow/resharper-heapview/
   resharper: ReSharperPlugin.HeapView
   rider: 9223-heap-allocations-viewer
 - name: InternalsVisibleTo
