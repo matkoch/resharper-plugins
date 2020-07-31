@@ -21,7 +21,7 @@ using static Nuke.Common.Tools.Git.GitTasks;
 [UnsetVisualStudioEnvironmentVariables]
 partial class Build : NukeBuild
 {
-    [Parameter] readonly bool UseSSH;
+    [Parameter] readonly bool UseHttps;
 
     [Solution] readonly Solution Solution;
 
@@ -35,7 +35,7 @@ partial class Build : NukeBuild
             {
                 var repository = GitRepository.FromUrl(plugin.repository);
                 var repositoryDirectory = ExternalRepositoriesDirectory / plugin.name.Replace(" ", "-");
-                var origin = UseSSH ? repository.SshUrl : repository.HttpsUrl;
+                var origin = UseHttps ? repository.HttpsUrl : repository.SshUrl;
 
                 if (!Directory.Exists(repositoryDirectory))
                     Git($"clone {origin} {repositoryDirectory} --branch {await repository.GetDefaultBranch()} --progress");
