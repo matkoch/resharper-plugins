@@ -17,7 +17,6 @@ using static Nuke.Common.IO.SerializationTasks;
 using static Nuke.Common.ProjectModel.ProjectModelTasks;
 using static Nuke.Common.Tools.Git.GitTasks;
 
-[CheckBuildProjectConfigurations]
 [UnsetVisualStudioEnvironmentVariables]
 partial class Build : NukeBuild
 {

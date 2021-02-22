@@ -43,6 +43,8 @@
   rider: 12816-xao
 - name: _Template
   repository: https://github.com/JetBrains/resharper-rider-plugin
+- name: _ReSharperRiderUpdate
+  repository: https://github.com/matkoch/ReSharperRiderUpdate.git
 - name: NUKE Support
   repository: https://github.com/nuke-build/resharper
   resharper: ReSharper.Nuke
