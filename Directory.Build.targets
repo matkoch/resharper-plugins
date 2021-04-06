@@ -1,0 +1,7 @@
+<Project>
+
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);MSB3277;MSB3021;MSB3026</NoWarn>
+  </PropertyGroup>
+
+</Project>
