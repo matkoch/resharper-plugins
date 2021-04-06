@@ -1,51 +1,38 @@
-- name: AgentMulder
-  repository: https://github.com/ERNICommunity/AgentMulder/
-  resharper: ERNI.AgentMulder
-- name: ConfigureAwaitChecker
-  repository: https://github.com/aelij/ConfigureAwaitChecker/
-  resharper: ConfigureAwaitChecker.v9
-  rider: 10948-configureawait-checker
 - name: CognitiveComplexity
   repository: https://github.com/matkoch/resharper-cognitivecomplexity/
-  resharper: ReSharperPlugin.CognitiveComplexity
+  resharper: 12391-cognitivecomplexity
   rider: 12024-cognitivecomplexity
 - name: CyclomaticComplexity
   repository: https://github.com/JetBrains/resharper-cyclomatic-complexity/
-  resharper: PowerToys.CyclomaticComplexity
+  resharper: 11625-cyclomaticcomplexity
   rider: 10395-cyclomatic-complexity
-- name: Exceptional
-  repository: https://github.com/CSharpAnalyzers/ExceptionalReSharper/
-  resharper: ExceptionalDevs.Exceptional
 - name: HeapView
   repository: https://github.com/controlflow/resharper-heapview/
-  resharper: ReSharperPlugin.HeapView
+  resharper: 12390-heap-allocations-viewer
   rider: 9223-heap-allocations-viewer
 - name: InternalsVisibleTo
   repository: https://github.com/matkoch/resharper-internalsvisibleto/
-  resharper: ReSharper.InternalsVisibleTo
+  resharper: 11643-internalsvisibleto-helper
   rider: 13624-internalsvisibleto
 - name: PresentationAssistant
   repository: https://github.com/JetBrains/resharper-presentation-assistant/
-  resharper: JetBrains.PresentationAssistant
-- name: SerializationInspections
-  repository: https://github.com/matkoch/SerializationInspections/
-  resharper: ReSharper.SerializationInspections
+  resharper: 11631-presentation-assistant
 - name: StyleCop
   repository: https://github.com/StyleCop/StyleCop.ReSharper/
-  resharper: StyleCop.StyleCop
-- name: TestLinker
-  repository: https://github.com/matkoch/resharper-testlinker/
-  resharper: ReSharper.TestLinker
-  rider: 12022-testlinker
+  resharper: 11619-stylecop-by-jetbrains
 - name: Xao
   repository: https://github.com/matkoch/resharper-xao/
-  resharper: ReSharper.Xao
+  resharper: 11673-xao--navigate-between-a-xaml-view-and-viewmodel
   rider: 12816-xao
+- name: FluentValidation
+  repository: https://github.com/matkoch/resharper-fluentvalidation/
+  resharper: 15946-fluentvalidation
+  rider: 15942-fluentvalidation
+- name: FluentAssertions
+  repository: https://github.com/matkoch/resharper-fluentassertions/
+  resharper: 16367-fluentassertions
+  rider: 16224-fluentassertions
 - name: _Template
   repository: https://github.com/JetBrains/resharper-rider-plugin
 - name: _ReSharperRiderUpdate
   repository: https://github.com/matkoch/ReSharperRiderUpdate.git
-- name: NUKE Support
-  repository: https://github.com/nuke-build/resharper
-  resharper: ReSharper.Nuke
-  rider: 10803-nuke-support
