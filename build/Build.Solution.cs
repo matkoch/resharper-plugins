@@ -20,24 +20,25 @@ using static Nuke.Common.Tools.Git.GitTasks;
 [UnsetVisualStudioEnvironmentVariables]
 partial class Build : NukeBuild
 {
-    [Parameter] readonly bool UseHttps;
+    [Parameter] bool UseHttps { get; } = IsServerBuild;
 
     [Solution] readonly Solution Solution;
 
     AbsolutePath ExternalRepositoriesDirectory => RootDirectory / "external";
     IEnumerable<Solution> ExternalSolutions => ExternalRepositoriesDirectory.GlobFiles("*/*.sln").Select(x => ParseSolution(x));
+    AbsolutePath GetPluginDirectory(Plugin plugin) => ExternalRepositoriesDirectory / plugin.name.Replace(" ", "-");
 
     Target CheckoutExternalRepositories => _ => _
-        .Executes(async () =>
+        .Executes(() =>
         {
             foreach (var plugin in Plugins)
             {
                 var repository = GitRepository.FromUrl(plugin.repository);
-                var repositoryDirectory = ExternalRepositoriesDirectory / plugin.name.Replace(" ", "-");
+                var repositoryDirectory = GetPluginDirectory(plugin);
                 var origin = UseHttps ? repository.HttpsUrl : repository.SshUrl;
 
                 if (!Directory.Exists(repositoryDirectory))
-                    Git($"clone {origin} {repositoryDirectory} --progress");
+                    Git($"clone {origin} {repositoryDirectory} --progress", logOutput: false);
                 else
                 {
                     SuppressErrors(() => Git($"remote add origin {origin}", repositoryDirectory));

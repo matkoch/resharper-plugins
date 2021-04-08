@@ -1,8 +1,7 @@
-using System.Collections.Generic;
 using System.Linq;
 using Nuke.Common;
-using Nuke.Common.IO;
-using Nuke.Common.Utilities;
+using static Nuke.Common.IO.TextTasks;
+using static Nuke.Common.Utilities.TemplateUtility;
 
 partial class Build
 {
@@ -11,7 +10,7 @@ partial class Build
     Target UpdateReadme => _ => _
         .Executes(() =>
         {
-            var content = TextTasks.ReadAllLines(ReadmeFile).ToList();
+            var content = ReadAllLines(ReadmeFile).ToList();
             var table =
                 new[]
                 {
@@ -21,10 +20,10 @@ partial class Build
                     .Where(x => !x.name.StartsWith("_"))
                     .OrderBy(x => x.name)
                     .Select(x => $"| {x.GetRepositoryLink()} | {x.GetReSharperBadge()} | {x.GetRiderBadge()} |"));
-            TemplateUtility.ExtractAndRemoveRegions(content, "<!-- BEGIN: TABLE", "<!-- END: TABLE");
-            TemplateUtility.AddRegion(content, "<!-- BEGIN: TABLE -->", table);
+            ExtractAndRemoveRegions(content, "<!-- BEGIN: TABLE", "<!-- END: TABLE");
+            AddRegion(content, "<!-- BEGIN: TABLE -->", table);
 
-            TextTasks.WriteAllLines(ReadmeFile, content);
+            WriteAllLines(ReadmeFile, content);
         });
 
     public class Plugin
@@ -38,14 +37,16 @@ partial class Build
 
         public string GetReSharperBadge()
         {
-            var badge = $"![ReSharper](https://img.shields.io/resharper/v/{resharper}.svg?label=)";
-            return $"[{badge}](https://resharper-plugins.jetbrains.com/packages/{resharper})";
+            return resharper != null
+                ? $"[![ReSharper](https://img.shields.io/jetbrains/plugin/v/{resharper}.svg?label=)](https://plugins.jetbrains.com/plugin/{resharper})"
+                : string.Empty;
         }
 
         public string GetRiderBadge()
         {
-            var badge = $"![ReSharper](https://img.shields.io/jetbrains/plugin/v/{rider}.svg?label=)";
-            return $"[{badge}](https://plugins.jetbrains.com/plugin/{rider})";
+            return rider != null
+                ? $"[![Rider](https://img.shields.io/jetbrains/plugin/v/{rider}.svg?label=)](https://plugins.jetbrains.com/plugin/{rider})"
+                : string.Empty;
         }
     }
 }

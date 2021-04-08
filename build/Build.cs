@@ -1,6 +1,11 @@
 using System.Collections.Generic;
+using System.Linq;
 using Nuke.Common;
 using Nuke.Common.IO;
+using Nuke.Common.Tooling;
+using Nuke.Common.Tools.DotNet;
+using static Nuke.Common.IO.SerializationTasks;
+using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
 partial class Build
 {
@@ -12,24 +17,20 @@ partial class Build
     public static int Main() => Execute<Build>();
 
     string PluginsFile => RootDirectory / "plugins.yml";
-    IEnumerable<Plugin> Plugins => SerializationTasks.YamlDeserializeFromFile<List<Plugin>>(PluginsFile);
+    IEnumerable<Plugin> Plugins => YamlDeserializeFromFile<List<Plugin>>(PluginsFile);
 
-    Target Compile => _ => _
+    Target Update => _ => _
         .DependsOn(CheckoutExternalRepositories)
-        .Produces(ExternalRepositoriesDirectory / "*" / "output" / "*.zip")
-        .Produces(ExternalRepositoriesDirectory / "*" / "output" / "*.nupkg")
         .Executes(() =>
         {
-            foreach (var plugin in Plugins.Where(x => !x.name.StartsWith("_")))
+            var plugins = Plugins.Where(x => !x.name.StartsWith("_")).OrderBy(x => x.name).ToList();
+            foreach (var plugin in plugins)
             {
-                TeamCity.Instance.SetBuildStatus($"{plugin.name}:", prepend: true);
-                using (Logger.Block(plugin.name))
-                {
-                    DotNetRun(_ => _
-                        .SetProjectFile(ReSharperRiderUpdateProjectFile)
-                        .SetProcessWorkingDirectory(GetPluginDirectory(plugin))
-                        .SetApplicationArguments("compile --root --no-logo"));
-                }
+                DotNetRun(_ => _
+                    .SetProjectFile(ReSharperRiderUpdateProjectFile)
+                    .SetProcessWorkingDirectory(GetPluginDirectory(plugin))
+                    .SetApplicationArguments("compile --root --no-logo")
+                    .DisableProcessLogOutput());
             }
         });
 
