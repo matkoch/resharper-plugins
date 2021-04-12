@@ -66,7 +66,7 @@ project {
                             if (Test-Path "gradlew.bat") {
                                 & gradle.bat :publishPlugin -PPluginVersion=${'$'}version -PPublishToken=%env.PublishToken%
                             } else {
-                                & ./publishPlugin.ps1 -Version=${'$'}version -ApiKey %env.PublishToken%
+                                & ./publishPlugin.ps1 -Version ${'$'}version -ApiKey %env.PublishToken%
                                 exit ${'$'}LASTEXITCODE
                             }
                         """.trimIndent()
