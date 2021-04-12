@@ -24,8 +24,8 @@ changeVcsRoot(RelativeId("NUKEVcsRoot")) {
 
     (this as GitVcsRoot).apply {
         authMethod = password {
-            userName = "%env.EnterpriseAccessToken%"
-            password = ""
+            userName = "nuke-bot"
+            password = "credentialsJSON:2edf91d0-2cc3-41d0-a4fa-d90f92051ffa"
         }
     }
 
