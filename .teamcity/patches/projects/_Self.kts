@@ -15,7 +15,7 @@ changeProject(DslContext.projectId) {
             password("env.PublishToken", "", label = "PublishToken", display = ParameterDisplay.PROMPT)
         }
         update {
-            password("env.PublishToken", "credentialsJSON:f64775db-810c-4985-8e78-1735bb5f62c6", label = "PublishToken")
+            password("env.PublishToken", "credentialsJSON:bbef7a45-d3f9-4476-b68e-d6d85c9a1ae0", label = "PublishToken")
         }
     }
 }
