@@ -18,5 +18,28 @@ create(DslContext.projectId, BuildType({
     vcs {
         showDependenciesChanges = true
     }
+
+    dependencies {
+        snapshot(RelativeId("CognitiveComplexity")) {
+        }
+        snapshot(RelativeId("CyclomaticComplexity")) {
+        }
+        snapshot(RelativeId("FluentAssertions")) {
+        }
+        snapshot(RelativeId("FluentValidation")) {
+        }
+        snapshot(RelativeId("HeapView")) {
+        }
+        snapshot(RelativeId("InternalsVisibleTo")) {
+        }
+        snapshot(RelativeId("NUKE")) {
+        }
+        snapshot(RelativeId("PresentationAssistant")) {
+        }
+        snapshot(RelativeId("StyleCop")) {
+        }
+        snapshot(RelativeId("Xao")) {
+        }
+    }
 }))
 
