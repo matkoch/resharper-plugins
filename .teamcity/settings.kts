@@ -64,7 +64,7 @@ project {
                             ${'$'}version=${'$'}(git describe --abbrev=0 %build.vcs.number% --tags)
                             echo "##teamcity[buildNumber '${'$'}version']"
                             if (Test-Path "gradlew.bat") {
-                                & gradle.bat :publishPlugin -PPluginVersion=${'$'}version -PPublishToken=%env.PublishToken%
+                                & gradle.bat :publishPlugin -PPluginVersion="${'$'}version" -PPublishToken="%env.PublishToken%"
                             } else {
                                 & ./publishPlugin.ps1 -Version ${'$'}version -ApiKey %env.PublishToken%
                             }
