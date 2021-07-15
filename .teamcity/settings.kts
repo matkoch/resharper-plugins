@@ -33,6 +33,7 @@ val projects = listOf(
     Pair("NUKE", "https://github.com/nuke-build/resharper/"),
     Pair("PresentationAssistant", "https://github.com/JetBrains/resharper-presentation-assistant/"),
     Pair("StyleCop", "https://github.com/StyleCop/StyleCop.ReSharper/"),
+    Pair("Verify", "https://github.com/matkoch/resharper-verify/"),
     Pair("Xao", "https://github.com/matkoch/resharper-xao/"),
 )
 

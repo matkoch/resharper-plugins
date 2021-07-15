@@ -32,6 +32,10 @@
   repository: https://github.com/matkoch/resharper-fluentassertions/
   resharper: 16367-fluentassertions
   rider: 16224-fluentassertions
+- name: Verify
+  repository: https://github.com/matkoch/resharper-Verify/
+  resharper: 17241-verify-support
+  rider: 17240-verify-support
 - name: _Template
   repository: https://github.com/JetBrains/resharper-rider-plugin
 - name: _ReSharperRiderUpdate
