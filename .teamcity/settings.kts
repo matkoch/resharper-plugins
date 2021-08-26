@@ -32,6 +32,7 @@ val projects = listOf(
     Pair("InternalsVisibleTo", "https://github.com/matkoch/resharper-internalsvisibleto/"),
     Pair("NUKE", "https://github.com/nuke-build/resharper/"),
     Pair("PresentationAssistant", "https://github.com/JetBrains/resharper-presentation-assistant/"),
+    Pair("Statiq", "https://github.com/matkoch/resharper-statiq/"),
     Pair("StyleCop", "https://github.com/StyleCop/StyleCop.ReSharper/"),
     Pair("Verify", "https://github.com/matkoch/resharper-verify/"),
     Pair("Xao", "https://github.com/matkoch/resharper-xao/"),

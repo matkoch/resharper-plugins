@@ -36,6 +36,9 @@
   repository: https://github.com/matkoch/resharper-Verify/
   resharper: 17241-verify-support
   rider: 17240-verify-support
+- name: Statiq
+  repository: https://github.com/matkoch/resharper-statiq/
+  rider: 17472-statiq-support
 - name: _Template
   repository: https://github.com/JetBrains/resharper-rider-plugin
 - name: _ReSharperRiderUpdate
