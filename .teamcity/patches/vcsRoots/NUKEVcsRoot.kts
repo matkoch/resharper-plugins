@@ -16,6 +16,7 @@ changeVcsRoot(RelativeId("NUKEVcsRoot")) {
         pollInterval = 60
         url = "https://github.com/nuke-build/resharper/"
         branch = "refs/heads/master"
+        param("useAlternates", "true")
     })
 
     check(this == expected) {
@@ -26,7 +27,7 @@ changeVcsRoot(RelativeId("NUKEVcsRoot")) {
         checkoutPolicy = GitVcsRoot.AgentCheckoutPolicy.USE_MIRRORS
         authMethod = password {
             userName = "nuke-bot"
-            password = "credentialsJSON:b9a6a106-351a-484c-a3bc-f5aead220aaa"
+            password = "credentialsJSON:12621440-7084-45f8-ba43-0d65201c2a53"
         }
     }
 
