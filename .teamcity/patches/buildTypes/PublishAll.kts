@@ -32,8 +32,6 @@ create(DslContext.projectId, BuildType({
         }
         snapshot(RelativeId("InternalsVisibleTo")) {
         }
-        snapshot(RelativeId("NUKE")) {
-        }
         snapshot(RelativeId("PresentationAssistant")) {
         }
         snapshot(RelativeId("StyleCop")) {

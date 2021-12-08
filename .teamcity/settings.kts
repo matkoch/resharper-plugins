@@ -30,7 +30,6 @@ val projects = listOf(
     Pair("FluentValidation", "https://github.com/matkoch/resharper-fluentvalidation/"),
     Pair("HeapView", "https://github.com/controlflow/resharper-heapview/"),
     Pair("InternalsVisibleTo", "https://github.com/matkoch/resharper-internalsvisibleto/"),
-    Pair("NUKE", "https://github.com/nuke-build/resharper/"),
     Pair("PresentationAssistant", "https://github.com/JetBrains/resharper-presentation-assistant/"),
     Pair("Statiq", "https://github.com/matkoch/resharper-statiq/"),
     Pair("StyleCop", "https://github.com/StyleCop/StyleCop.ReSharper/"),
