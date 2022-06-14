@@ -16,7 +16,6 @@ changeVcsRoot(RelativeId("NUKEVcsRoot")) {
         pollInterval = 60
         url = "https://github.com/nuke-build/resharper/"
         branch = "refs/heads/master"
-        param("useAlternates", "true")
     })
 
     check(this == expected) {

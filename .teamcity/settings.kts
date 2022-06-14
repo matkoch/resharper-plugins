@@ -21,7 +21,7 @@ import jetbrains.buildServer.configs.kotlin.v2018_1.triggers.*
 import jetbrains.buildServer.configs.kotlin.v2018_1.vcs.*
 import jetbrains.buildServer.configs.kotlin.v2018_1.ui.*
 
-version = "2020.2"
+version = "2022.04"
 
 val projects = listOf(
     Pair("CognitiveComplexity", "https://github.com/matkoch/resharper-cognitivecomplexity"),
