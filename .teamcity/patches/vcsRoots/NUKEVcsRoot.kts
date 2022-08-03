@@ -26,7 +26,7 @@ changeVcsRoot(RelativeId("NUKEVcsRoot")) {
         checkoutPolicy = GitVcsRoot.AgentCheckoutPolicy.USE_MIRRORS
         authMethod = password {
             userName = "nuke-bot"
-            password = "credentialsJSON:616c02d3-2095-4063-8f4d-658500d3f948"
+            password = "credentialsJSON:b9a4b0c2-c27c-431e-b998-3b9356175596"
         }
     }
 
