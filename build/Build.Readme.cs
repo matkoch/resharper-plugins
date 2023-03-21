@@ -1,52 +1,57 @@
 using System.Linq;
 using Nuke.Common;
-using static Nuke.Common.IO.TextTasks;
+using Nuke.Common.IO;
+using Nuke.Utilities.Text.Yaml;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
 using static Nuke.Common.Utilities.TemplateUtility;
 
 partial class Build
 {
-    string ReadmeFile => RootDirectory / "README.md";
+    public Build()
+    {
+        YamlExtensions.DefaultDeserializerBuilder = new DeserializerBuilder()
+            .WithNamingConvention(LowerCaseNamingConvention.Instance);
+    }
+
+    AbsolutePath ReadmeFile => RootDirectory / "README.md";
 
     Target UpdateReadme => _ => _
         .Executes(() =>
         {
-            var content = ReadAllLines(ReadmeFile).ToList();
+            var content = ReadmeFile.ReadAllLines().ToList();
             var table =
                 new[]
                 {
                     "| Name   | Latest ReSharper Version | Latest Rider Version |",
                     "|:-------|:------------------------:|:--------------------:|"
                 }.Concat(Plugins
-                    .Where(x => !x.name.StartsWith("_"))
-                    .OrderBy(x => x.name)
+                    .Where(x => !x.Name.StartsWith("_"))
+                    .OrderBy(x => x.Name)
                     .Select(x => $"| {x.GetRepositoryLink()} | {x.GetReSharperBadge()} | {x.GetRiderBadge()} |"));
             ExtractAndRemoveRegions(content, "<!-- BEGIN: TABLE", "<!-- END: TABLE");
             AddRegion(content, "<!-- BEGIN: TABLE -->", table);
 
-            WriteAllLines(ReadmeFile, content);
+            ReadmeFile.WriteAllLines(content);
         });
 
     public class Plugin
     {
-        public string name { get; set; }
-        public string repository { get; set; }
-        public string resharper { get; set; }
-        public string rider { get; set; }
+        public string Name;
+        public string Repository;
+        public string ReSharper;
+        public string Rider;
 
-        public string GetRepositoryLink() => $"[{name}]({repository})";
+        public string GetRepositoryLink() => $"[{Name}]({Repository})";
 
-        public string GetReSharperBadge()
-        {
-            return resharper != null
-                ? $"[![ReSharper](https://img.shields.io/jetbrains/plugin/v/{resharper}.svg?label=)](https://plugins.jetbrains.com/plugin/{resharper})"
+        public string GetReSharperBadge() =>
+            ReSharper != null
+                ? $"[![ReSharper](https://img.shields.io/jetbrains/plugin/v/{ReSharper}.svg?label=)](https://plugins.jetbrains.com/plugin/{ReSharper})"
                 : string.Empty;
-        }
 
-        public string GetRiderBadge()
-        {
-            return rider != null
-                ? $"[![Rider](https://img.shields.io/jetbrains/plugin/v/{rider}.svg?label=)](https://plugins.jetbrains.com/plugin/{rider})"
+        public string GetRiderBadge() =>
+            Rider != null
+                ? $"[![Rider](https://img.shields.io/jetbrains/plugin/v/{Rider}.svg?label=)](https://plugins.jetbrains.com/plugin/{Rider})"
                 : string.Empty;
-        }
     }
 }

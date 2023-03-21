@@ -15,4 +15,3 @@
 | [Verify](https://github.com/matkoch/resharper-Verify/) | [![ReSharper](https://img.shields.io/jetbrains/plugin/v/17241-verify-support.svg?label=)](https://plugins.jetbrains.com/plugin/17241-verify-support) | [![Rider](https://img.shields.io/jetbrains/plugin/v/17240-verify-support.svg?label=)](https://plugins.jetbrains.com/plugin/17240-verify-support) |
 | [Xao](https://github.com/matkoch/resharper-xao/) | [![ReSharper](https://img.shields.io/jetbrains/plugin/v/11673-xao--navigate-between-a-xaml-view-and-viewmodel.svg?label=)](https://plugins.jetbrains.com/plugin/11673-xao--navigate-between-a-xaml-view-and-viewmodel) | [![Rider](https://img.shields.io/jetbrains/plugin/v/12816-xao.svg?label=)](https://plugins.jetbrains.com/plugin/12816-xao) |
 <!-- END: TABLE -->
-
