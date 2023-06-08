@@ -46,6 +46,7 @@ project {
             url = project.second
             branch = "refs/heads/master"
             pollInterval = 60
+            checkoutPolicy = GitVcsRoot.AgentCheckoutPolicy.NO_MIRRORS
         }
         val pluginBuildType = BuildType {
             id(project.first)
